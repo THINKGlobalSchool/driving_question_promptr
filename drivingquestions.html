@@ -1,0 +1,58 @@
+<head>
+	<title>Driving Questions</title>
+</head>
+
+<body>
+	<div id="main" class="container-fluid">
+		<div class="row vertical-align">
+			<div class="col-sm-10 col-sm-offset-1 center"> 
+				<h1 class="main-title">Driving Question Promptr</h1>
+
+				{{> q_generator }}
+			</div>
+		</div>
+	</div>
+</body>
+
+<template name="q_generator">
+	<div class="row">
+			<div class="col-sm-3">
+				<label>Framing Word</label>
+				<select name="framing_word" class="form-control input-lg">
+					{{#each framing_options}}
+						<option value="{{.}}" {{selected "selected_framing_word"}}>{{.}}</option>
+					{{/each}}
+				</select>
+			</div>
+
+			<div class="col-sm-3">
+				<label>Entity</label>
+				<select name="entity" class="form-control input-lg">
+					{{#each entity_options}}
+						<option value="{{.}}" {{selected "selected_entity"}}>{{.}}</option>
+					{{/each}}
+				</select>
+			</div>
+
+			<div class="col-sm-3">
+				<label>Action</label>
+				<select name="action" class="form-control input-lg">
+					{{#each action_options}}
+						<option value="{{.}}" {{selected "selected_action"}}>{{.}}</option>
+					{{/each}}
+				</select>
+			</div>
+			
+			<div class="col-sm-3">
+				<label>Purpose</label>
+				<select name="purpose" class="form-control input-lg">
+					{{#each purpose_options}}
+						<option value="{{.}}" {{selected "selected_purpose"}}>{{.}}</option>
+					{{/each}}
+				</select>
+			</div>
+	</div>
+	<div class="row">
+			<button id='randomize' class='btn btn-default btn-lg'>Randomize</button>
+	</div>
+</template>
